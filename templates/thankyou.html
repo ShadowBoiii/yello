@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You - Feedback Submitted</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="thank-you-card">
+            <div class="success-icon">✓</div>
+            <h1>Thank You!</h1>
+            <p class="message">{{ name|greet }}</p>
+            <p class="submessage">Your feedback has been submitted successfully.</p>
+            <p class="submessage">We greatly appreciate your input and will use it to improve our services.</p>
+            <a href="{{ url_for('index') }}" class="action-button">Return to Home</a>
+        </div>
+    </div>
+</body>
+</html>

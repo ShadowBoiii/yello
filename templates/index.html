@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback Collection - Home</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h1>Recent Feedback</h1>
+            <a href="{{ url_for('submit') }}" class="action-button">Share Your Feedback</a>
+        </div>
+
+        <div class="feedback-list">
+            {% for feedback in feedbacks %}
+            <div class="feedback-card">
+                <div class="feedback-header">
+                    <h3>{{ feedback[1] }}</h3>
+                    <span>{{ feedback[3] }}</span>
+                </div>
+                <p>{{ feedback[2] }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
